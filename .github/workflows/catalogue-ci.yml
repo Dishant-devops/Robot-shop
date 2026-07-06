@@ -6,12 +6,12 @@ on:
     branches: [ "main", "CI-Workflows" ] 
     paths:
       - 'catlogue/**'
-      - '.github/workflows/catlogue-ci.yml'
+      - '.github/workflows/catalogue-ci.yml'
   
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'catlogue/**'
+      - 'catalogue/**'
 
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/robot-shop-catlogue
+      IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/robot-shop-catalogue
 
     steps:
       - name: Checkout Code
@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t $IMAGE_NAME:${{ github.sha }} ./catlogue
+          docker build -t $IMAGE_NAME:${{ github.sha }} ./catalogue
 
 
       # # Run Trivy Scan
