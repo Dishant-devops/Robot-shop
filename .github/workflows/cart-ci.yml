@@ -13,12 +13,14 @@ on:
     paths:
       - 'cart/**'
 
-  env:
-    IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/cart
 
 jobs:
   build-scan-push:
     runs-on: ubuntu-latest
+    
+    env:
+      IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/cart
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
