@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/Robot-shop-cart
+      IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/robot-shop-cart
 
     steps:
       - name: Checkout Code
