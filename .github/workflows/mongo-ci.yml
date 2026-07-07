@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t $IMAGE_NAME:${{ github.sha }} ./load-gen
+          docker build -t $IMAGE_NAME:${{ github.sha }} ./mongo
 
 
       # # Run Trivy Scan
